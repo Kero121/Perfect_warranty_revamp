@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ASUS Perfect Warranty</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet">
+    <style>
+    :root {
+      --primary: #0b3d91;
+      --dark: #1a1a1a;
+      --light: #f9fafc;
+      --bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    section{
+      padding: 50px 20px;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: var(--dark);
+      background-color: var(--light);
+      scroll-behavior: smooth;
+      line-height: 1.6;
+    }
+
+    header.hero {
+      position: relative;
+      background: url('Images/Content-section_desktop_1200x400.jpg') ;
+      color: #fff;
+      text-align: center;
+      padding: 8rem 0.5rem;
+      
+      background-size: cover;
+      background-position: center center;
+    }
+
+    header.hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.45);
+    }
+
+    header.hero h1,
+    header.hero p,
+    header.hero .cta-button {
+      position: relative;
+      z-index: 2;
+      animation: fadeUp 1s ease forwards;
+    }
+
+    header.hero h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    header.hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-inline: auto;
+    }
+
+    .cta-button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 0.9rem 2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      background: #092d6a;
+    }
+
+    
+    section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .about p {
+      flex: 1;
+      font-size: 1rem;
+      color: #444;
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .about img {
+      flex: 1;
+      border-radius: 12px;
+      width: 70%;
+      animation: fadeIn 1s ease forwards;
+    }
+
+   /* AppleCare-style section */
+.coverage-section {
+background: var(--light);
+padding: 5rem 1rem;
+text-align: center;
+}
+
+
+.coverage-section h2 {
+font-size: 2.2rem;
+margin-bottom: 1rem;
+}
+
+
+.coverage-section p.subtitle {
+font-size: 1.1rem;
+color: #555;
+margin-bottom: 3rem;
+}
+
+
+.coverage-cards {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 2rem;
+text-align: center;
+margin: 0 auto;
+}
+
+
+.coverage-card {
+background: #fff;
+border-radius: 20px;
+padding: 2rem;
+box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+transition: all 0.3s ease;
+text-align: left;
+animation: fadeUp 1s ease forwards;
+}
+
+
+.coverage-card:hover {
+transform: translateY(-6px);
+box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+
+.coverage-card img {
+width: 60px;
+margin-bottom: 1.2rem;
+}
+
+
+.coverage-card h3 {
+font-size: 1.25rem;
+margin-bottom: 0.5rem;
+color: var(--dark);
+font-weight: 600;
+}
+
+
+.coverage-card p {
+font-size: 0.95rem;
+color: #555;
+line-height: 1.5;
+}
+
+    .inclusions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .inclusion-box, .exclusion-box {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .inclusion-box:hover, .exclusion-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .inclusion-box h3 { color: var(--primary); }
+    .exclusion-box h3 { color: #c62828; }
+
+    .inclusion-list {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .inclusion-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .icon-circle {
+      background: #e8f5e9;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .step-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2rem 1rem;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .step-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .step-card img {
+      width: 60px;
+      margin-bottom: 1rem;
+    }
+
+    .faq-section {
+      background: var(--light);
+      padding: 4rem 1rem;
+    }
+
+    footer {
+      background: #f1f1f1;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    /* Extra Links */
+.extra-links {
+  text-align: center;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.extra-links .link-item {
+  font-size: 1rem;
+  color: #222;
+  text-decoration: none;
+}
+
+.extra-links .link-item span {
+  color: #0b3d91;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.extra-links .link-item span:hover {
+  text-decoration: underline;
+}
+
+    @keyframes fadeUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @media (max-width: 768px) {
+      header.hero {padding: 6rem 1rem;}
+      header.hero h1 {font-size: 2rem;}
+      section {margin: 3rem auto;}
+
+      .about img {
+     
+      width: 100%;
+      
+    }
+    .cta_section img{
+      width: 100% !important;
+    }
+    }
+  </style>
+  </head>
+  <body>
+    <header class="hero">
+      <h1>ASUS Perfect Warranty</h1>
+      <p>Peace of mind against accidental damage — at no extra cost.</p>
+      <a href="https://account.asus.com/eg-en/loginform.aspx?utm_source=event&utm_medium=perfectwarranty&utm_campaign=egcrm&utm_content=productregistration" class="cta-button">Register Now</a>
+    </header>
+
+    <section class="bg-white p-5">
+      <div class="container">
+        <h2 class="text-center">
+          What is ASUS Perfect Warranty ?
+
+        </h2>
+        <div class="about">
+
+          <p class="fs-4">
+            ASUS Perfect Warranty provides extra protection for your ASUS device
+            against accidents. With no additional fees, experience peace of mind
+            beyond the standard warranty. It ensures your device is covered
+            against
+            drops, spills, and accidental breakage — because we understand that
+            accidents happen.
+          </p>
+<a style="text-decoration: none;" class="text-center" href="https://account.asus.com/eg-en/loginform.aspx?utm_source=event&utm_medium=perfectwarranty&utm_campaign=egcrm&utm_content=productregistration"><img src="Hero-Banner-(Top-Section)_desktop_1200x500.jpg"
+            alt="Perfect Warranty Banner"></a>
+          
+        </div>
+      </div>
+
+    </section>
+
+    <section class="coverage-section">
+      <div class="container">
+        <h2>Covered from Every Angle</h2>
+        <p class="subtitle">ASUS Perfect Warranty protects your device from
+          life’s
+          unexpected accidents — giving you peace of mind inside and out.</p>
+        <div class="coverage-cards">
+          <div class="coverage-card">
+            <img src="Images/3141907-200.png" alt="Dropped">
+            <h3>Dropped or Cracked</h3>
+            <p>Stay protected from accidental drops, cracks, or screen damage.
+              Get
+              quick, certified ASUS service and replacement parts.</p>
+          </div>
+          <div class="coverage-card">
+            <img src="Images/1503111-200.png" alt="Spilled">
+            <h3>Spilled</h3>
+            <p>Liquid damage is covered as part of accidental damage protection.
+              So even spills won’t slow you down.</p>
+          </div>
+          <div class="coverage-card">
+            <img src="Images/143216-200.png" alt="Cracked">
+            <h3>Accidental Breakage</h3>
+            <p>From broken hinges to cracked casings, enjoy worry-free repairs
+              from our certified ASUS service centers.</p>
+          </div>
+          <div class="coverage-card">
+            <img src="Images/4925914-200.png" alt="Fast service">
+            <h3>Fast Service</h3>
+            <p>Quick turnaround and expert support ensure minimal downtime,
+              keeping your productivity uninterrupted.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="bg-white">
+      <div class="container">
+        <h2>What's Included</h2>
+        <div class="inclusions-grid">
+          <div class="inclusion-box bg-light">
+            <h3>✅ Inclusions</h3>
+            <ul class="inclusion-list">
+              <li><span class="icon-circle"><img
+                    src="https://cdn-icons-png.flaticon.com/512/845/845646.png"
+                    width="14"></span>Accidental drops & collisions</li>
+              <li><span class="icon-circle"><img
+                    src="https://cdn-icons-png.flaticon.com/512/845/845646.png"
+                    width="14"></span>Liquid damage</li>
+              <li><span class="icon-circle"><img
+                    src="https://cdn-icons-png.flaticon.com/512/845/845646.png"
+                    width="14"></span>Electrical surges</li>
+              <li><span class="icon-circle"><img
+                    src="https://cdn-icons-png.flaticon.com/512/845/845646.png"
+                    width="14"></span>Accidental breakage</li>
+            </ul>
+          </div>
+          <div class="exclusion-box bg-light">
+            <h3>❌ Exclusions</h3>
+            <p>Theft, loss, natural disasters, or intentional damage are not
+              covered under ASUS Perfect Warranty.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>How to Receive Perfect Warranty</h2>
+        <div class="steps-grid">
+          <div class="step-card"><img
+              src="https://cdn-icons-png.flaticon.com/512/456/456212.png"><h3>Step
+              1</h3><p>Register as an <strong>ASUS Member</strong></p></div>
+          <div class="step-card"><img
+              src="https://cdn-icons-png.flaticon.com/512/992/992703.png"><h3>Step
+              2</h3><p>Register your product <strong>within 90 days of
+                purchase</strong></p></div>
+          <div class="step-card"><img
+              src="https://cdn-icons-png.flaticon.com/512/190/190411.png"><h3>Step
+              3</h3><p>Enjoy peace of mind with <strong>ASUS Perfect
+                Warranty</strong></p></div>
+        </div>
+        <div class="extra-links">
+      <a href="https://www.asus.com/support/faq/1003379/" class="link-item">How to register your ASUS products: <span>Click here</span></a>
+      <a href="https://eg-en.store.asus.com/purchase/seriesnum" class="link-item">Upgrade Warranty: <span>Click here</span></a>
+    </div>
+        <div style="text-align:center;margin-top:2rem;">
+          <a  class="cta-button" href="https://account.asus.com/eg-en/loginform.aspx?utm_source=event&utm_medium=perfectwarranty&utm_campaign=egcrm&utm_content=productregistration">Register Now</a>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="faq-section">
+      <div class="container ">
+        <h2>Frequently Asked Questions</h2>
+        <div class="accordion py-3 mt-2" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true">What is covered by ASUS Perfect
+                Warranty?</button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show">
+              <div class="accordion-body">ASUS Perfect Warranty covers
+                accidental
+                damage from drops, spills, and collisions.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapseTwo">How long
+                does the warranty last?</button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse">
+              <div class="accordion-body">The warranty lasts for one full year
+                after the original purchase date.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapseThree">Does
+                it
+                cover theft or loss?</button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse">
+              <div class="accordion-body">No, ASUS Perfect Warranty covers only
+                accidental physical damage.</div>
+            </div>
+
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapseFour">How to
+                find my product Serial Number?</button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse">
+              <div class="accordion-body">Please check ASUS support site
+                https://www.asus.com/eg/support/Article/566/ for more
+                information
+                of finding your products serial number.</div>
+            </div>
+
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapseFive">When
+                does
+                ASUS Perfect Warranty Pro coverage begin, and how long does it
+                last?</button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse">
+              <div class="accordion-body">Your ASUS Perfect Warranty Pro
+                coverage
+                starts on the purchase date of your laptop and lasts for 1 year,
+                and can only cover once for each product.</div>
+            </div>
+
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSix">
+              <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse" data-bs-target="#collapseSix">How many
+                claims can I file through ASUS Perfect Warranty Pro?</button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse">
+              <div class="accordion-body">There is a limit of only one (1) claim
+                per
+                registered serial number during the first year of product
+                ownership
+                starting from your purchase date. Serial number validation is
+                performed by ASUS after you complete the product registration
+                process.</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <section class="cta_section w-100">
+      <div class="text-center w-100">
+        <a href="https://account.asus.com/eg-en/loginform.aspx?utm_source=event&utm_medium=perfectwarranty&utm_campaign=egcrm&utm_content=productregistration" style="text-decoration: none; "><img style="border-radius: 20px;" class="w-75 " src="Images/CTA-Banner_desktop_1200x300.jpg" alt="CTA Banner"></a>
+      </div>
+      
+    
+    
+  </section>
+
+
+    <footer>
+      <p>© 2025 ASUS. All rights reserved. <a href="#">Terms & Conditions</a> |
+        <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
