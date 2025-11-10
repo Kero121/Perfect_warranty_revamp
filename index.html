@@ -269,7 +269,7 @@ line-height: 1.5;
   display: flex;
   justify-content: center;
   align-items: stretch;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 1.5rem;
   padding: 4rem 2rem;
 }
@@ -280,7 +280,7 @@ line-height: 1.5;
   box-shadow: 0 0 0 1px #e1e4e8;
   text-align: center;
   padding: 2rem 1.5rem 2.5rem;
-  width: 260px;
+ width: 100%;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   position: relative;
 }
@@ -395,7 +395,7 @@ line-height: 1.5;
 @media (max-width: 768px) {
   .feature-card {
     width: 100%;
-    max-width: 320px;
+    
   }
 }
 
@@ -431,8 +431,7 @@ line-height: 1.5;
     width: 100%;
     background-size: cover;
     background-position: center;
-      
-      padding:17rem 0.5rem !important;
+    padding:17rem 0.5rem !important;
     }
     }
   </style>
@@ -474,7 +473,7 @@ line-height: 1.5;
         <h2 class>ASUS 4A Guarantee</h2>
         <p class="subtitle">Elevate Your Peace Of Mind</p>
       </div>
-      <div class="features">
+      <div class="features container">
 
         <div class="feature-card" data-modal="modal1">
           <div class="icon">
@@ -573,7 +572,7 @@ line-height: 1.5;
     </div>
 
     <section class="coverage-section">
-      <div class="container">
+      <div class="container ">
         <h2>Covered from Every Angle</h2>
         <p class="subtitle">ASUS Perfect Warranty protects your device from
           life’s
@@ -628,11 +627,10 @@ line-height: 1.5;
           <a href="https://www.asus.com/support/faq/1003379/"
             class="link-item">How to register your ASUS products: <span>Click
               here</span></a>
-          <a href="https://eg-en.store.asus.com/purchase/seriesnum"
-            class="link-item">Upgrade Warranty: <span>Click here</span></a>
+          
         </div>
         <div style="text-align:center;margin-top:2rem;">
-          <a style="text-decoration: none;" class="learn-more"
+          <a class="learn-more" style="text-decoration: none;font-size: 1.5rem " 
             href="https://account.asus.com/eg-en/loginform.aspx?utm_source=event&utm_medium=perfectwarranty&utm_campaign=egcrm&utm_content=productregistration">Register
             Now</a>
         </div>
@@ -694,11 +692,11 @@ line-height: 1.5;
             <h2 class="accordion-header" id="headingOne">
               <button class="accordion-button collapsed" type="button"
                 data-bs-toggle="collapse" data-bs-target="#collapseOne">What
-                damages are covered by ASUS Perfect Warranty Pro?</button>
+                damages are covered by ASUS Perfect Warranty?</button>
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse ">
               <div class="accordion-body">ASUS Perfect Warranty covers
-                Our ASUS Perfect Warranty Pro program was created to help
+                Our ASUS Perfect Warranty program was created to help
                 protect you against damages such as: liquid damage, electrical
                 surges, accidental breakage, accidental drops, falls and other
                 collisions. Subject to verification by ASUS. Perfect Warranty
@@ -711,7 +709,7 @@ line-height: 1.5;
             <h2 class="accordion-header" id="headingThree">
               <button class="accordion-button collapsed" type="button"
                 data-bs-toggle="collapse" data-bs-target="#collapseThree">Is my
-                product eligible for ASUS Perfect Warranty Pro?</button>
+                product eligible for ASUS Perfect Warranty?</button>
             </h2>
             <div id="collapseThree" class="accordion-collapse collapse">
               <div class="accordion-body">This protection program applies only
@@ -728,11 +726,11 @@ line-height: 1.5;
             <h2 class="accordion-header" id="headingTwo">
               <button class="accordion-button collapsed" type="button"
                 data-bs-toggle="collapse" data-bs-target="#collapseTwo">When
-                does ASUS Perfect Warranty Pro coverage begin, and how long does
+                does ASUS Perfect Warranty coverage begin, and how long does
                 it last?</button>
             </h2>
             <div id="collapseTwo" class="accordion-collapse collapse">
-              <div class="accordion-body">Your ASUS Perfect Warranty Pro
+              <div class="accordion-body">Your ASUS Perfect Warranty
                 coverage starts on the purchase date of your laptop and lasts
                 for 1 year, and can only cover once for each product.</div>
             </div>
@@ -758,11 +756,11 @@ line-height: 1.5;
               <button class="accordion-button collapsed" type="button"
                 data-bs-toggle="collapse" data-bs-target="#collapseFive">When
                 does
-                ASUS Perfect Warranty Pro coverage begin, and how long does it
+                ASUS Perfect Warranty coverage begin, and how long does it
                 last?</button>
             </h2>
             <div id="collapseFive" class="accordion-collapse collapse">
-              <div class="accordion-body">Your ASUS Perfect Warranty Pro
+              <div class="accordion-body">Your ASUS Perfect Warranty
                 coverage
                 starts on the purchase date of your laptop and lasts for 1 year,
                 and can only cover once for each product.</div>
@@ -773,7 +771,7 @@ line-height: 1.5;
             <h2 class="accordion-header" id="headingSix">
               <button class="accordion-button collapsed" type="button"
                 data-bs-toggle="collapse" data-bs-target="#collapseSix">How many
-                claims can I file through ASUS Perfect Warranty Pro?</button>
+                claims can I file through ASUS Perfect Warranty?</button>
             </h2>
             <div id="collapseSix" class="accordion-collapse collapse">
               <div class="accordion-body">There is a limit of only one (1) claim
@@ -825,13 +823,13 @@ line-height: 1.5;
 
     <section>
       <div class="container">
-        <h3>ASUS Perfect Warranty Pro Terms & Conditions</h3>
-        <p>Accidents happen. ASUS Perfect Warranty Pro helps you reduce
+        <h3>ASUS Perfect Warranty Terms & Conditions</h3>
+        <p>Accidents happen. ASUS Perfect Warranty helps you reduce
           potential repair or replacement costs due to any unfortunate mishaps
           that occur during normal use of your devices.</p>
         <ul class="points">
           <li>
-            ASUS Perfect Warranty Pro provides coverage for the following types
+            ASUS Perfect Warranty provides coverage for the following types
             of accidental damage arising out of normal use: drops, falls or
             other collisions, liquid damage, electrical surges and accidental
             breakage.
@@ -870,13 +868,13 @@ line-height: 1.5;
             may be terminated immediately.
           </li>
           <li>
-            The contents and availability of ASUS Perfect Warranty Pro may vary
+            The contents and availability of ASUS Perfect Warranty may vary
             by country and device eligibility.
           </li>
         </ul>
       </div>
       <div class="disclaimer container text-muted">
-        <p>*Product lines covered by ASUS Perfect Warranty Pro: ASUS Consumer
+        <p>*Product lines covered by ASUS Perfect Warranty: ASUS Consumer
           Laptops, Gaming Laptops purchased from authorized ASUS resellers in
           Egypt only starting Jan 1, 2025.</p>
         <p>*Service and warranty coverage may vary depending on region and
