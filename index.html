@@ -391,6 +391,74 @@ line-height: 1.5;
 .close:hover {
   color: #253b6e;
 }
+/* Bottom CTA bar */
+/* ===== Bottom CTA Bar (ASUS Style) ===== */
+.bottom-cta-bar {
+  position: fixed;
+  left: 0;
+  bottom: -100px; /* hidden initially */
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 -3px 10px rgba(0,0,0,0.08);
+  padding: 1rem 0;
+  transition: bottom 0.4s ease;
+  z-index: 9999;
+}
+
+.bottom-cta-bar.show {
+  bottom: 0;
+}
+
+.cta-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cta-text {
+  font-size: 1.1rem;
+  color: #000;
+  font-weight: 500;
+}
+
+.cta-btn {
+  background: linear-gradient(90deg, #3740ff, #901bff);
+  color: #fff;
+  padding: 0.7rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.cta-btn:hover {
+  opacity: 0.9;
+}
+
+/* Mobile Styling */
+@media (max-width: 768px) {
+  .cta-container {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .cta-text {
+    font-size: 1rem;
+  }
+
+  .cta-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
 
 @media (max-width: 768px) {
   .feature-card {
@@ -437,11 +505,12 @@ line-height: 1.5;
   </style>
   </head>
   <body>
-    <a style="text-decoration: none;" href="https://account.asus.com/eg-en/loginform.aspx?utm_source=event&utm_medium=perfectwarranty&utm_campaign=egcrm&utm_content=productregistration">
-    <header class="hero">
+    <a style="text-decoration: none;"
+      href="https://account.asus.com/eg-en/loginform.aspx?utm_source=event&utm_medium=perfectwarranty&utm_campaign=egcrm&utm_content=productregistration">
+      <header class="hero">
 
-    </header>
-</a>
+      </header>
+    </a>
     <section class="bg-white p-5">
       <div class="container">
         <h2 class="text-center">
@@ -480,6 +549,7 @@ line-height: 1.5;
             <img src="Images/shield.svg" alt="Assured Quality">
           </div>
           <h3>Assured<br>Quality</h3>
+
           <button class="learn-more">Learn More</button>
         </div>
 
@@ -566,7 +636,8 @@ line-height: 1.5;
         </div>
         <h3>Added-value Experience</h3>
         <p>
-         Avail Easy warranty upgrades, product usage training, redeem offers, referral benefits, enjoy membership benefits
+          Avail easy warranty upgrades, product usage training, redeem offers,
+          referral benefits, enjoy membership benefits
         </p>
       </div>
     </div>
@@ -627,10 +698,10 @@ line-height: 1.5;
           <a href="https://www.asus.com/support/faq/1003379/"
             class="link-item">How to register your ASUS products: <span>Click
               here</span></a>
-          
+
         </div>
         <div style="text-align:center;margin-top:2rem;">
-          <a class="learn-more" style="text-decoration: none;font-size: 1.5rem " 
+          <a class="learn-more" style="text-decoration: none;font-size: 1.5rem "
             href="https://account.asus.com/eg-en/loginform.aspx?utm_source=event&utm_medium=perfectwarranty&utm_campaign=egcrm&utm_content=productregistration">Register
             Now</a>
         </div>
@@ -754,16 +825,18 @@ line-height: 1.5;
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingFive">
               <button class="accordion-button collapsed" type="button"
-                data-bs-toggle="collapse" data-bs-target="#collapseFive">When
-                does
-                ASUS Perfect Warranty coverage begin, and how long does it
-                last?</button>
+                data-bs-toggle="collapse" data-bs-target="#collapseFive">How do
+                I file an ASUS Perfect Warranty claim?</button>
             </h2>
             <div id="collapseFive" class="accordion-collapse collapse">
-              <div class="accordion-body">Your ASUS Perfect Warranty
-                coverage
-                starts on the purchase date of your laptop and lasts for 1 year,
-                and can only cover once for each product.</div>
+              <div class="accordion-body">Register your products via ASUS Member
+                portal, MyASUS, Armoury Crate, Perfect Warranty page, or any
+                other ASUS product registration portal. Once the product
+                registration is confirmed, it will automatically come with ASUS
+                Perfect Warranty Pro coverage for one year from the date of
+                purchase, and you can check your warranty status from
+                <a href="https://www.asus.com/support/warranty-status-inquiry.">https://www.asus.com/support/warranty-status-inquiry.</a>
+                </div>
             </div>
 
           </div>
@@ -796,7 +869,7 @@ line-height: 1.5;
           <li>This promotion is only applicable to purchases and repairs within
             Egypt.</li>
           <li>If any questions, please visit the ASUS support site <a
-              href="https://www.asus.com/eg/support/">https://www.asus.com/eg/support/</a>ASUS
+              href="https://www.asus.com/eg/support/">https://www.asus.com/eg/support/   </a>.  ASUS
             reserves the right to approve, change, modify, or cancel the content
             of this promotion.</li>
           <li>Before registering your ASUS product, please confirm that the
@@ -893,6 +966,19 @@ line-height: 1.5;
       </div>
 
     </section>
+    <!-- Bottom Fixed CTA -->
+    <div id="bottom-cta" class="bottom-cta-bar">
+      <div class="cta-container">
+        <span class="cta-text">
+          Register your product to receive a 1-year ASUS Perfect Warranty Pro!
+        </span>
+
+        <a class="cta-btn"
+          href="https://account.asus.com/eg-en/loginform.aspx?utm_source=event&utm_medium=perfectwarranty&utm_campaign=egcrm&utm_content=productregistration">
+          REGISTER NOW
+        </a>
+      </div>
+    </div>
 
     <footer>
       <p>© 2025 ASUS. All rights reserved. <a href="#">Terms & Conditions</a> |
@@ -926,6 +1012,20 @@ line-height: 1.5;
       }
     });
   });
+
+// Bottom CTA - show after scrolling past hero
+const bottomCTA = document.getElementById("bottom-cta");
+const hero = document.querySelector(".hero");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > hero.offsetHeight) {
+    bottomCTA.classList.add("show");
+  } else {
+    bottomCTA.classList.remove("show");
+  }
+});
+
+
 </script>
 
   </body>
