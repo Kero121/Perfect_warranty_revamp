@@ -220,7 +220,7 @@ line-height: 1.5;
     }
 
     footer {
-      background: #f1f1f1;
+      background: transparent;
       text-align: center;
       padding: 2rem;
       font-size: 0.9rem;
@@ -268,7 +268,7 @@ line-height: 1.5;
 .features {
   display: flex;
   justify-content: center;
-  align-items: stretch;
+  
   flex-wrap: nowrap;
   gap: 1.5rem;
   padding: 4rem 2rem;
@@ -461,8 +461,11 @@ line-height: 1.5;
 
 
 @media (max-width: 768px) {
+  .features{
+    flex-wrap: wrap;
+  }
   .feature-card {
-    width: 100%;
+    width: 100% !important;
     
   }
 }
